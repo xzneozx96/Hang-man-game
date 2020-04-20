@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hang Man</title>
+    </head>
+
+    <body>
+        <h1 class="page-title">Hang Man</h1>
+        <p class="quiz" style="margin: 0; font-family: Georgia, 'Times New Roman', Times, serif;">Question: <span id="question"></span></p>
+        <div class="overlay-text visible">
+            Click to Start
+        </div>
+
+        <div id="game-over-text" class="overlay-text">
+            You let me died
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+
+        <div id="victory-text" class="overlay-text">
+            You saved me 
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+
+        <div class="game-container">
+            <div id="hangman-container">
+                <img id="hangman-body" src="images/0.jpg" height="300px">
+            </div>
+
+            <ul id="secret-word"></ul>
+
+            <ul id="btn-container"></ul>
+
+            <p id="clue-display" style="margin: 0; font-size: 20px; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"></p>
+
+            <div class="clues">
+                <button class="clue" id="clue1">Clue 1</button>
+                <button class="clue" id="clue2">Clue 2</button>
+                <button class="clue" id="clue3">Clue 3</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
