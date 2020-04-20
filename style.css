@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Lunacy;
+    background-color: #CDD6D0;
+}
+@font-face {
+    font-family: "Creepy";
+    src: url("Assets/Fonts/Creepy.woff") format("woff"),
+         url("Assets/Fonts/Creepy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Lunacy";
+    src: url("Assets/Fonts/Lunacy.woff") format("woff"),
+         url("Assets/Fonts/Lunacy.woff2") format("woff2");
+}
+.page-title {
+    color: #E3170A;
+    font-family: Creepy, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 5em;
+    margin: 0;
+  }
+.quiz {
+  color: #E3170A;
+  font-family: Lunacy, serif;
+  font-weight: 500;
+  text-align: center;
+  font-size: 2.3em;
+}
+.overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #E16036;
+    font-family: Creepy, serif;
+    transition: background-color 500ms, font-size 500ms;
+}
+  
+.overlay-text-small {
+    font-size: .3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+    }
+    to {
+      background-color: rgba(0, 0, 0, .4);
+      font-size: 10em;
+    }
+}
+
+.game-container {
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(5, auto);
+  grid-gap: 40px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#hangman-container {
+  margin: 0 auto;
+  padding: 0;
+}
+
+#btn-container{
+  margin: 15px auto;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(13, auto);
+  grid-gap: 10px;
+}
+
+.letter {
+  padding: 15px 40px;
+  width: 100%;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 15px;
+  background-color: #E16036;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  cursor: pointer;
+}
+.letter:hover {
+  background-color: #D6A99A;
+  color: black;
+}
+/* remove the blue border when click a button */
+.letter:focus {outline:0;}
+.letter.turn-red {
+  background-color: red;
+  color: white;
+  opacity: 0.3;
+}
+#secret-word {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.secret-letter {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  height: 70px;
+  width: 70px;
+  border: 2px dotted #c35858;
+  border-radius: 10px;
+  background-color: #d0d1fe;
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: brown;
+  font-weight: 1000;  
+}
+.secret-letter:hover {
+  border: 2px dotted white;
+  cursor: pointer;
+}
+.secret-letter.empty-letter {
+  border: none;
+  background-color: #CDD6D0;
+}
+#secret-word .hidden {
+  display: none;
+}
+
+.clues {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.clue:focus {outline: 0;}
+.clue {
+  padding: 15px 40px;
+  width: 25%;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  cursor: pointer;
+}
+.clues #clue1 {
+  background-color: tomato;
+  color: white;
+}
+.clues #clue1:hover {
+  background-color: red;
+}
+.clues #clue2 {
+  background-color: dodgerblue;
+  color: white;
+}
+#clue2:hover {
+  background-color: blue;
+}
+#clue3 {
+  background-color: violet;
+  color: white;
+}
+#clue3:hover {
+  background-color: purple;
+}
